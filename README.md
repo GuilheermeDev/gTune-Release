@@ -43,7 +43,18 @@ Players of competitive titles like **Valorant / League of Legends (Riot Vanguard
 
 ---
 
-### 🚀 Patch Notes — `v1.2.0` (Per-Player Audio Control, Desktop OSD Toggle & 20.3 MB Build)
+### 🚀 Patch Notes — `v1.2.1` (Spotify-Style Marquee Scroll, Responsive Dialogs & 5s OSD)
+
+- **Spotify-Style Smooth Marquee Scrolling (`MarqueeLabel`)**:
+  - Long song titles and artist names now smoothly scroll horizontally with soft edge fades across **Taskbar Mode**, **Floating Popup Mode**, and the **Top-Left OSD** (pausing briefly at the start and end before smoothly returning).
+  - Engineered for zero performance overhead: **0% CPU** when text fits, when the overlay is hidden/minimized, or during pauses (single-shot timer), with a cached pre-rendered text `QPixmap` during active scrolling.
+- **Full Dialog Responsiveness (Zero Clipped Text in EN & pt-BR)**:
+  - Rebuilt **Settings** option rows with word-wrapped clickable toggles (`WrappedToggleRow`) inside an adaptive `QScrollArea`, with tight auto-fit height and dynamically sized buttons so long translations and 125%–150% Windows DPI scaling never clip.
+  - Made **How to Use** and **Credits** dialogs dynamically sized to screen geometry and wrapped text height.
+- **Longer Top-Left OSD Duration (`2.8s` → `5.0s`)**:
+  - Increased the Top-Left OSD auto-hide timeout to **5 seconds** so you have plenty of time to read scrolling track names or click transport/volume buttons.
+
+### 📦 Previous Release — `v1.2.0` (Per-Player Audio Control, Desktop OSD Toggle & 20.3 MB Build)
 
 - **Per-Player Volume Control (100% Anti-Cheat Safe via Pure WASAPI)**:
   - Adjusting volume via the speaker button (click, drag, or mouse scroll) or keyboard shortcuts (`Ctrl+Alt+Up/Down/M`) now controls **only the active music player's volume** (Spotify, YouTube in Chrome/Edge/Brave/Firefox/Opera, Apple Music, VLC, etc.) — leaving your **game audio and Discord untouched**.
@@ -135,7 +146,18 @@ Jogadores de títulos competitivos como **Valorant / League of Legends (Riot Van
 
 ---
 
-### 🚀 Patch Notes — `v1.2.0` (Volume Por Player, OSD Fora do Modo Jogo e Executável de 20.3 MB)
+### 🚀 Patch Notes — `v1.2.1` (Scroll Estilo Spotify, Diálogos Responsivos e OSD de 5s)
+
+- **Scroll Horizontal Suave Estilo Spotify (`MarqueeLabel`)**:
+  - Nomes longos de músicas e artistas agora deslizam horizontalmente com *fade* suave nas bordas nos modos **Barra de Tarefas**, **Popup Flutuante** e **OSD Superior Esquerdo** (pausando no início e no final antes de retornar suavemente).
+  - Otimizado para zero impacto em jogos: **0% de CPU** quando o texto cabe, quando o player está minimizado/oculto ou durante as pausas (timer *single-shot*), com cache de `QPixmap` pré-renderizado durante o deslocamento.
+- **Responsividade Completa nos Diálogos (Zero Texto Cortado em EN e pt-BR)**:
+  - Todas as opções das **Configurações** agora usam toggles clicáveis com quebra de linha real (`WrappedToggleRow`) dentro de uma área rolável adaptativa, altura ajustada exatamente ao conteúdo e botões com largura dinâmica (sem cortes mesmo em escalas de DPI 125%–150%).
+  - Diálogos **Como Usar** e **Créditos** agora se ajustam dinamicamente ao monitor e à altura real do texto.
+- **Maior Tempo de Exibição do OSD (`2.8s` → `5.0s`)**:
+  - O card rápido do canto superior esquerdo agora permanece visível por **5 segundos**, dando tempo confortável para ler músicas longas em scroll ou clicar nos botões.
+
+### 📦 Versão Anterior — `v1.2.0` (Volume Por Player, OSD Fora do Modo Jogo e Executável de 20.3 MB)
 
 - **Controle de Volume Específico do Player Ativo (100% Seguro contra Anti-Cheats via WASAPI Puro)**:
   - Ajustar o volume na caixinha de som (clique, arraste ou scroll) ou pelos atalhos (`Ctrl+Alt+Cima/Baixo/M`) agora altera **apenas o volume do player de música ativo** (Spotify, YouTube no Chrome/Edge/Brave/Firefox/Opera, Apple Music, VLC, etc.) — deixando o **som do seu jogo e do Discord intactos**.
