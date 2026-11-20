@@ -43,7 +43,15 @@ Players of competitive titles like **Valorant / League of Legends (Riot Vanguard
 
 ---
 
-### 🚀 Patch Notes — `v1.2.1` (Spotify-Style Marquee Scroll, Responsive Dialogs & 5s OSD)
+### 🚀 Patch Notes — `v1.2.2` (Sticky Media Session & Browser Cover Art Refresh)
+
+- **No More Flashing Paused Background Players (Sticky Session Selection)**:
+  - Switching tracks on YouTube/browser while another player (like Spotify) is paused in the background no longer flashes the paused player's track in the overlay or Top-Left OSD.
+  - Added sticky `app_id` session preference with a brief `1.8s` grace period for transient browser SMTC transitions (`CHANGING` / `PAUSED` / session recreation), while still switching **immediately** whenever another player starts `PLAYING`.
+- **Automatic Browser Album Art Refresh (No Stuck Chrome Logo)**:
+  - Briefly re-checks the GSMTC thumbnail stream for up to `3.5s` after a track change so browsers (Chrome, Edge, Brave, etc.) that initially emit their browser logo automatically swap to the real YouTube/video cover art as soon as it finishes loading — with ~0% CPU overhead once updated.
+
+### 📦 Previous Release — `v1.2.1` (Spotify-Style Marquee Scroll, Responsive Dialogs & 5s OSD)
 
 - **Spotify-Style Smooth Marquee Scrolling (`MarqueeLabel`)**:
   - Long song titles and artist names now smoothly scroll horizontally with soft edge fades across **Taskbar Mode**, **Floating Popup Mode**, and the **Top-Left OSD** (pausing briefly at the start and end before smoothly returning).
@@ -146,7 +154,15 @@ Jogadores de títulos competitivos como **Valorant / League of Legends (Riot Van
 
 ---
 
-### 🚀 Patch Notes — `v1.2.1` (Scroll Estilo Spotify, Diálogos Responsivos e OSD de 5s)
+### 🚀 Patch Notes — `v1.2.2` (Sessão de Mídia Aderente e Atualização Automática de Capa no Navegador)
+
+- **Fim da "Piscada" de Players Pausados em Segundo Plano (Seleção Sticky)**:
+  - Ao trocar de música no YouTube/navegador com o Spotify pausado em segundo plano, o overlay e o OSD não piscam mais a música pausada do Spotify.
+  - Adicionada seleção aderente (*sticky*) por `app_id` com breve tolerância de `1.8s` para transições momentâneas da sessão GSMTC do navegador (`CHANGING` / `PAUSED` / recriação de sessão), mantendo a troca **instantânea** assim que outro player começa a tocar.
+- **Atualização Automática da Capa no Navegador (Sem Ficar Preso no Logo do Chrome)**:
+  - Recheca a thumbnail do GSMTC por até `3.5s` após a troca de faixa para que navegadores (Chrome, Edge, Brave, etc.) que enviam inicialmente o próprio logo atualizem automaticamente para a capa real da música assim que ela carrega — com impacto ~0% de CPU.
+
+### 📦 Versão Anterior — `v1.2.1` (Scroll Estilo Spotify, Diálogos Responsivos e OSD de 5s)
 
 - **Scroll Horizontal Suave Estilo Spotify (`MarqueeLabel`)**:
   - Nomes longos de músicas e artistas agora deslizam horizontalmente com *fade* suave nas bordas nos modos **Barra de Tarefas**, **Popup Flutuante** e **OSD Superior Esquerdo** (pausando no início e no final antes de retornar suavemente).
