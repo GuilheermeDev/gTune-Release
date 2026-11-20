@@ -43,7 +43,21 @@ Players of competitive titles like **Valorant / League of Legends (Riot Vanguard
 
 ---
 
-### 🚀 Patch Notes — `v1.2.2` (Sticky Media Session & Browser Cover Art Refresh)
+### 🚀 Patch Notes — `v2.0.0` (Ambient Rim Redesign, Gaming HUD Pill, Responsive Resize & Smart Audio Switching)
+
+- **Smart WASAPI Audio-Peak Session Switching + Manual Source Switch (`Ctrl+Alt+S`)**:
+  - Automatically detects real audio output via Windows Core Audio (`IAudioMeterInformation` / `Audiosrv`) so muted livestreams in Chrome/browsers automatically yield to audible players like Spotify — with zero process inspection.
+  - Added **`Ctrl+Alt+S`** and a **Media Source** tray submenu to manually switch or lock any active media session.
+- **Ambient Rim Design & Dynamic Album Art Accent (Gaming & Desktop)**:
+  - Smooth `QPainter` gradient rim + subtle radial glow behind the album art for both **Game Mode** and **Desktop (Normal Mode)**, with selectable accents (**Tactical Cyan**, **Neon Purple**, **Tactical Amber**, **Spotify Green**, or **Dynamic Album Art Color**) and independent opacity controls.
+- **Auto-Compact Gaming HUD Pill**:
+  - Transforms Game Mode 2 into a sleek rounded pill with compact volume, 2px bottom progress line, 5 independent in-game positions (**Top Left / Top Center / Top Right / Bottom Left / Bottom Right**), and a one-click crosshair button to exit Game Mode.
+- **Free Edge/Corner Resizing & Responsive Breakpoints**:
+  - Resize Popup and Taskbar overlays freely by dragging edges/corners with automatic *Full / Compact / Mini* responsive layouts, saved dimensions, and quick size presets.
+- **Streamlined Right-Click Menu & 3-Tab Settings Modal**:
+  - Cleaned up the right-click/tray menu into essential quick actions backed by a 3-tab **Settings** modal (*Game Mode*, *Appearance & Size*, *General*), plus an option to completely disable automatic Top-Left OSD popups (manual `Ctrl+Alt+I` only).
+
+### 📦 Previous Release — `v1.2.2` (Sticky Media Session & Browser Cover Art Refresh)
 
 - **No More Flashing Paused Background Players (Sticky Session Selection)**:
   - Switching tracks on YouTube/browser while another player (like Spotify) is paused in the background no longer flashes the paused player's track in the overlay or Top-Left OSD.
@@ -154,7 +168,21 @@ Jogadores de títulos competitivos como **Valorant / League of Legends (Riot Van
 
 ---
 
-### 🚀 Patch Notes — `v1.2.2` (Sessão de Mídia Aderente e Atualização Automática de Capa no Navegador)
+### 🚀 Patch Notes — `v2.0.0` (Visual Ambient Rim, Gaming HUD Pill, Resize Responsivo e Troca Inteligente de Áudio)
+
+- **Troca Inteligente por Áudio Real (WASAPI) + Troca Manual (`Ctrl+Alt+S`)**:
+  - Detecta saída real de áudio via Windows Core Audio (`IAudioMeterInformation` / `Audiosrv`) para que lives mutadas no Chrome cedam automaticamente para o Spotify tocando — com zero inspeção de processos.
+  - Adicionado atalho **`Ctrl+Alt+S`** e submenu **Fonte de Mídia** para alternar manualmente entre sessões ativas.
+- **Novo Visual Ambient Rim & Cor Dinâmica da Capa (Modo Jogo e Área de Trabalho)**:
+  - Contorno degradê suave em `QPainter` + brilho ambiente atrás da capa disponíveis tanto no **Modo Jogo** quanto no **Modo Normal (Área de Trabalho)**, com paleta de cores (**Ciano Tático**, **Roxo Neon**, **Âmbar Tático**, **Verde Spotify** ou **Cor da Capa Dinâmico**) e opacidade independente.
+- **Gaming HUD Pill Auto-Compacto**:
+  - Compacta o Modo Jogo 2 em uma pílula arredondada minimalista com volume compacto, barra de progresso de 2px na base, 5 posições independentes em jogo (**Topo Esq / Topo Centro / Topo Dir / Base Esq / Base Dir**) e botão de mira clicável para sair do Modo Jogo.
+- **Redimensionamento Livre & Layout Responsivo**:
+  - Arraste as bordas/cantos nos modos Popup e Barra de Tarefas com adaptação automática (*Padrão / Compacto / Mini*), tamanho salvo e presets rápidos.
+- **Menu de Clique Direito Enxuto & Configurações em 3 Abas**:
+  - Menu rápido reorganizado com apenas ações essenciais + modal de **Configurações** em 3 abas (*Modo Jogo*, *Visual & Tamanho*, *Geral*), além da opção para desativar completamente o card OSD automático (só aparece com `Ctrl+Alt+I`).
+
+### 📦 Versão Anterior — `v1.2.2` (Sessão de Mídia Aderente e Atualização Automática de Capa no Navegador)
 
 - **Fim da "Piscada" de Players Pausados em Segundo Plano (Seleção Sticky)**:
   - Ao trocar de música no YouTube/navegador com o Spotify pausado em segundo plano, o overlay e o OSD não piscam mais a música pausada do Spotify.
