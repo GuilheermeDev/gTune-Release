@@ -43,7 +43,27 @@ Players of competitive titles like **Valorant / League of Legends (Riot Vanguard
 
 ---
 
-### 🚀 Patch Notes — `v2.0.0` (Ambient Rim Redesign, Gaming HUD Pill, Responsive Resize & Smart Audio Switching)
+### 🚀 Patch Notes — `v2.1.0` (Beat-Reactive Glow & Equalizer, Living Cover Art, Auto-Reveal UI, Multi-Monitor Fullscreen & Major CPU/RAM Optimization)
+
+- **Real-Time Beat-Synced Ambient Glow & 3-Bar Equalizer (100% Anti-Cheat Safe)**:
+  - Cached active-player WASAPI `IAudioMeterInformation` pointer reads audio peaks every `35ms` only while music is playing and visible (zero session re-enumeration, ~0% CPU when paused/hidden).
+  - Both the **Ambient Glow** behind the cover art and the new **3-bar equalizer** (now across **Taskbar**, **Popup**, **Gaming HUD**, and **Top-Left OSD**) pulse organically in the rhythm of the music.
+- **Living Cover Art (100% Local Procedural Animations)**:
+  - Choose between **Ken Burns** (subtle smooth zoom & pan), **Spinning Vinyl Disc** (circular rotating record with center spindle), or **Static** — pure `QPainter` with zero network calls and zero extra dependencies.
+- **Ultra-Clean Ghost UI, Auto-Reveal Controls & Unified Top-Left OSD**:
+  - Highlighted **Play/Pause** pill button, borderless **Ghost** buttons, and smooth **Auto-Reveal on Hover** for utility buttons (`Game Mode`, `Pin/Pop-Out`, `Minimize`, `Close`) in both Taskbar and Popup modes.
+  - Upgraded the **Top-Left OSD** to share the exact same `AmbientContainerFrame` glass design, adaptive accent color, and beat-reactive equalizer.
+  - Added **Micro Pill FPS** (`224×36px`) style for competitive gaming.
+- **Multi-Monitor Fullscreen Support & Optional Auto Game Mode**:
+  - Upgraded fullscreen detection to `MonitorFromWindow` + `GetMonitorInfoW` so Game Mode HUD and Top-Left OSD appear reliably on the **exact monitor** where your game is running (including 2nd/3rd monitors).
+  - Added optional **Auto-activate Game Mode in Fullscreen** plus passive Z-order checks (`GetWindow`) so the HUD stays reliably visible over borderless fullscreen games.
+- **Simplified 2-Tab Settings Modal**:
+  - Consolidated overlapping options into 2 clean tabs (**Game Mode** | **Appearance & General**) with zero clutter.
+- **Major Background CPU & Memory Optimization**:
+  - Replaced `30ms` hotkey polling with event-driven `MsgWaitForMultipleObjects` (`0ms` latency, `~0%` idle CPU) and merged duplicate WASAPI COM enumerations into a single pass.
+  - Replaced `80ms` media command polling with `asyncio.Event`, downscaled thumbnails once to `<= 128×128` to discard multi-MB buffers, fixed `instance.lock` byte growth, and replaced `id(bytes)` tracking with monotonic versioning.
+
+### 📦 Previous Release — `v2.0.0` (Ambient Rim Redesign, Gaming HUD Pill, Responsive Resize & Smart Audio Switching)
 
 - **Smart WASAPI Audio-Peak Session Switching + Manual Source Switch (`Ctrl+Alt+S`)**:
   - Automatically detects real audio output via Windows Core Audio (`IAudioMeterInformation` / `Audiosrv`) so muted livestreams in Chrome/browsers automatically yield to audible players like Spotify — with zero process inspection.
@@ -134,6 +154,7 @@ Players of competitive titles like **Valorant / League of Legends (Riot Vanguard
 | `Ctrl + Alt + P` | Switch between Pinned Taskbar Mode and Floating Popup Mode |
 | `Ctrl + Alt + G` | Activate or Deactivate Game Mode (applies Mode 1 or Mode 2) |
 | `Ctrl + Alt + I` | Show the Top-Left OSD Card on demand |
+| `Ctrl + Alt + S` | Cycle between active media sources (e.g. Spotify ⇄ Chrome/YouTube) |
 | `Ctrl + Alt + Space` | Play / Pause current media |
 | `Ctrl + Alt + Right / Left` | Next Track / Previous Track |
 | `Ctrl + Alt + Up / Down` | Volume Up (`+5%`) / Volume Down (`-5%`) |
@@ -168,7 +189,27 @@ Jogadores de títulos competitivos como **Valorant / League of Legends (Riot Van
 
 ---
 
-### 🚀 Patch Notes — `v2.0.0` (Visual Ambient Rim, Gaming HUD Pill, Resize Responsivo e Troca Inteligente de Áudio)
+### 🚀 Patch Notes — `v2.1.0` (Brilho e Equalizador no Ritmo da Música, Capa Viva, Auto-Reveal, Fullscreen 2º Monitor e Otimização de CPU/RAM)
+
+- **Brilho Ambiente e Equalizador de 3 Barras no Ritmo Real da Música (100% Seguro contra Anti-Cheats)**:
+  - Leitura direta do ponteiro `IAudioMeterInformation` em cache a cada `35ms` apenas enquanto toca e está visível (sem re-enumerar sessões, ~0% CPU quando pausado/oculto).
+  - Tanto o **Brilho Ambiente** atrás da capa quanto as **3 barras do equalizador** (agora no **Modo Fixo**, **Modo Livre**, **Gaming HUD** e **OSD Superior Esquerdo**) acompanham as batidas reais da música.
+- **Capa Viva ("Living Cover Art" — 100% Local)**:
+  - Escolha entre **Ken Burns** (zoom/pan suave), **Disco de Vinil Girando** ou **Estática** — 100% em `QPainter`, sem chamadas de rede e sem dependências extras.
+- **Visual Ultra-Clean (Ghost + Auto-Reveal) e OSD Unificado**:
+  - Botão **Play/Pause** em destaque (pill na cor de destaque), botões **Ghost** sem bordas e **Auto-Reveal no Hover** para os utilitários (`Modo Jogo`, `Pin/Destacar`, `Minimizar`, `Fechar`) nos modos Fixo e Livre.
+  - **OSD Superior Esquerdo** redesenhado com `AmbientContainerFrame`, cor adaptativa e equalizador no ritmo da música.
+  - Novo estilo **Micro Pill FPS** (`224×36px`) para jogos competitivos.
+- **Fullscreen em Múltiplos Monitores & Auto-Ativar Modo Jogo**:
+  - Detecção de tela cheia atualizada para `MonitorFromWindow` + `GetMonitorInfoW`, posicionando o HUD e o OSD no **monitor exato** onde o jogo está aberto (incluindo 2º/3º monitor).
+  - Nova opção **Auto-ativar Modo Jogo em tela cheia** e verificação passiva de Z-order (`GetWindow`) para o HUD não sumir atrás do jogo.
+- **Configurações Simplificadas em 2 Abas**:
+  - Opções redundantes unificadas em apenas 2 abas limpas (**Modo Jogo** | **Visual & Geral**), mantendo 100% das funcionalidades.
+- **Grande Otimização de CPU e Memória RAM**:
+  - Polling de `30ms` substituído por `MsgWaitForMultipleObjects` (`0ms` de latência em atalhos, `~0%` CPU em idle) e enumeração WASAPI unificada em passagem única.
+  - Sleep picado de `80ms` substituído por `asyncio.Event`, thumbnails reduzidas uma única vez para `<= 128×128` descartando buffers grandes, correção do `instance.lock` e versionamento monotônico de capa.
+
+### 📦 Versão Anterior — `v2.0.0` (Visual Ambient Rim, Gaming HUD Pill, Resize Responsivo e Troca Inteligente de Áudio)
 
 - **Troca Inteligente por Áudio Real (WASAPI) + Troca Manual (`Ctrl+Alt+S`)**:
   - Detecta saída real de áudio via Windows Core Audio (`IAudioMeterInformation` / `Audiosrv`) para que lives mutadas no Chrome cedam automaticamente para o Spotify tocando — com zero inspeção de processos.
@@ -259,6 +300,7 @@ Jogadores de títulos competitivos como **Valorant / League of Legends (Riot Van
 | `Ctrl + Alt + P` | Alternar entre Modo Fixo na Barra de Tarefas e Modo Popup Flutuante |
 | `Ctrl + Alt + G` | Ativar ou Desativar o Modo Jogo (aplica o Modo 1 ou Modo 2 escolhido) |
 | `Ctrl + Alt + I` | Exibir o card superior esquerdo (OSD) sob demanda |
+| `Ctrl + Alt + S` | Alternar entre as fontes de mídia ativas (ex: Spotify ⇄ Chrome/YouTube) |
 | `Ctrl + Alt + Espaço` | Play / Pause na música ou vídeo atual |
 | `Ctrl + Alt + Seta Dir / Esq` | Próxima Música / Música Anterior |
 | `Ctrl + Alt + Seta Cima / Baixo` | Aumentar Volume (`+5%`) / Diminuir Volume (`-5%`) |
