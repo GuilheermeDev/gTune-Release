@@ -43,7 +43,16 @@ Players of competitive titles like **Valorant / League of Legends (Riot Vanguard
 
 ---
 
-### 🚀 Patch Notes — `v2.1.0` (Beat-Reactive Glow & Equalizer, Living Cover Art, Auto-Reveal UI, Multi-Monitor Fullscreen & Major CPU/RAM Optimization)
+### 🚀 Patch Notes — `v2.2.0` (Compact Frameless Vinyl Mode & Built-in Auto-Updater)
+
+- **Compact Vinyl Mode (Frameless Transparent Design)**:
+  - New 3rd overlay design showing only a glossy spinning vinyl disc with your album art in the center, static diagonal sheen, subtle beat-reactive halo, and shadowed track title/artist.
+  - All controls (**Previous, Play/Pause, Next, Volume, Pin, Game Mode, Minimize, Close**) appear smoothly on hover.
+  - Switch anytime between **Pinned to Taskbar**, **Floating Popup**, and **Compact Vinyl** via **Settings → Appearance & General**, **System Tray → Overlay Design**, or `Ctrl+Alt+P`.
+- **Built-in GitHub Releases Auto-Updater**:
+  - Automatically checks for new releases on startup (and manually via **System Tray → Check for Updates**) and downloads/replaces `gTune.exe` in 1 click with automatic restart.
+
+### 📦 Previous Release — `v2.1.0` (Beat-Reactive Glow & Equalizer, Living Cover Art, Auto-Reveal UI, Multi-Monitor Fullscreen & Major CPU/RAM Optimization)
 
 - **Real-Time Beat-Synced Ambient Glow & 3-Bar Equalizer (100% Anti-Cheat Safe)**:
   - Cached active-player WASAPI `IAudioMeterInformation` pointer reads audio peaks every `35ms` only while music is playing and visible (zero session re-enumeration, ~0% CPU when paused/hidden).
@@ -189,7 +198,16 @@ Jogadores de títulos competitivos como **Valorant / League of Legends (Riot Van
 
 ---
 
-### 🚀 Patch Notes — `v2.1.0` (Brilho e Equalizador no Ritmo da Música, Capa Viva, Auto-Reveal, Fullscreen 2º Monitor e Otimização de CPU/RAM)
+### 🚀 Patch Notes — `v2.2.0` (Modo Vinil Compacto Sem Fundo & Auto-Atualização Integrada)
+
+- **Modo Vinil Compacto (Sem Fundo / Transparente)**:
+  - Novo 3º visual do overlay exibindo apenas o disco de vinil girando com a capa do álbum no centro, reflexo diagonal realista, brilho ambiente no ritmo da música e título/artista com sombra.
+  - Todos os controles (**Anterior, Play/Pause, Próxima, Volume, Fixar, Modo Jogo, Minimizar e Fechar**) aparecem suavemente ao passar o mouse.
+  - Alterne quando quiser entre **Barra de Tarefas**, **Popup Livre** e **Vinil Compacto** em **Configurações → Visual & Geral**, **Bandeja → Design do Overlay** ou `Ctrl+Alt+P`.
+- **Auto-Atualização Integrada (GitHub Releases)**:
+  - Verifica novas versões automaticamente ao abrir (ou manualmente em **Bandeja → Verificar Atualizações**) e atualiza o `gTune.exe` em 1 clique com reinício automático.
+
+### 📦 Versão Anterior — `v2.1.0` (Brilho e Equalizador no Ritmo da Música, Capa Viva, Auto-Reveal, Fullscreen 2º Monitor e Otimização de CPU/RAM)
 
 - **Brilho Ambiente e Equalizador de 3 Barras no Ritmo Real da Música (100% Seguro contra Anti-Cheats)**:
   - Leitura direta do ponteiro `IAudioMeterInformation` em cache a cada `35ms` apenas enquanto toca e está visível (sem re-enumerar sessões, ~0% CPU quando pausado/oculto).
